@@ -1,0 +1,23 @@
+<%= form_for @institucion do |f| %>
+  <% if @institucion.errors.any?%>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@institucion.errors.count, "error") %> No se pudo guardar por:</h2>
+    <ul><% @institucion.errors.full_messages.each do |msg| %><li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+  <p>
+    <%= f.label 'Nombre' %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label 'Direccion' %><br>
+    <%= f.text_field :direction %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

@@ -1,0 +1,19 @@
+<h1>Nuestras Sucursales!</h1>
+ 
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Direccion</th>
+  </tr>
+  <% @institucions.each do |institucion| %>
+    <tr>
+      <td><%= link_to institucion.name, institucion_path(institucion) %></td> 
+      <td><%= institucion.direction %></td>
+      <td><%= link_to 'Editar', edit_institucion_path(institucion) %></td>
+      <td><%= link_to 'Eliminar', institucion_path(institucion),
+                    method: :delete, data: { confirm:'Estas seguro?' } %></td>
+    </tr>
+  <% end %> 
+</table>
+
+<%= link_to 'Nueva Sucursal', new_institucion_path %>

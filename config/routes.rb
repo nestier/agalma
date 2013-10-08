@@ -1,4 +1,8 @@
 Agalma::Application.routes.draw do
+     resources :institucions 
+     get 'institucions', to: 'institucions#index'
+     root "institucions#index"	
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

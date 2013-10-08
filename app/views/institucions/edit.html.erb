@@ -1,0 +1,7 @@
+<h1>Editar institucion</h1>
+ 
+<%= render 'form' %>
+
+<%= link_to 'Atras', institucions_path %>
+<%= link_to 'Eliminar', institucion_path(@institucion),
+                    method: :delete, data: { confirm:'Estas seguro?' } %>
