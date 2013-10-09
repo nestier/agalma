@@ -28,7 +28,7 @@ class InstitucionsController < ApplicationController
 	def update
   		@institucion = Institucion.find(params[:id])
  
-  		if @institucion.update(params[:institucion].permit(:name, :direction))
+  		if @institucion.update(institucion_params)
     		redirect_to @institucion
   		else
     		render 'edit'
@@ -41,4 +41,8 @@ class InstitucionsController < ApplicationController
 
 		redirect_to institucions_path
 	end
+	private
+		def institucion_params
+			params.require(:institucion).permit(:name, :direction)
+		end
 end
