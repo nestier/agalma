@@ -1,5 +1,5 @@
 <h1>Nuestras Sucursales!</h1>
- 
+<% if !@institucions.empty? %> 
 <table>
   <tr>
     <th>Nombre</th>
@@ -15,5 +15,7 @@
     </tr>
   <% end %> 
 </table>
-
+<% else %>
+<h2> Puede comenzar a cargar sucursales ahora. </h2>
+<% end %>
 <%= link_to 'Nueva Sucursal', new_institucion_path %>
